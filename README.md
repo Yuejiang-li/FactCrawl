@@ -8,7 +8,6 @@ This repo contain python codes of crawling the discrimination of news in 'https:
 **Environments Requirements**
 
 - Python 3.5+
-- BeautifulSoup 4.4.0
 - Requests
 - Pandas
 
