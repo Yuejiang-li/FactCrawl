@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+
 import requests
 import json
 import time
@@ -19,7 +22,7 @@ def main():
 
     # loop over the pages
     for i in range(20):
-        page_num = i+1
+        page_num = i # 从0开始
         print('currently parsing page {}'.format(page_num))
         payload['page'] = page_num
         payload['callback'] = callback_head + str(page_num)
@@ -35,7 +38,7 @@ def main():
                     value = ','.join(value)
                 data[key].append(value)
         del contents, content
-        gc.collect()
+        gc.collect() # 垃圾回收
     df = pd.DataFrame(data)
     df.to_csv('Rumor_Fact.csv')
 
